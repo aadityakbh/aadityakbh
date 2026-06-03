@@ -1,0 +1,6 @@
+# This is a profile repository, not a software project. Keep the generated
+# artwork and source text out of GitHub's language statistics so the repo
+# reads as what it is.
+assets/*   linguist-vendored
+scripts/*  linguist-vendored
+*.md       linguist-documentation

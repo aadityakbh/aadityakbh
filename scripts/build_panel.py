@@ -43,7 +43,7 @@ MONO = "ui-monospace, SFMono-Regular, Menlo, 'DejaVu Sans Mono', Consolas, monos
 # Info block ------------------------------------------------------------------
 INFO = [
     ("head", "who is aaditya?"),
-    ("row",  "age",       "23"),
+    ("row",  "age",       "24"),
     ("row",  "based",     "bay area / nyc"),
     ("row",  "building",  "blockhouse"),
     ("row",  "interests", "defi · mev · quantitative trading · agents"),
@@ -213,7 +213,8 @@ def info(x, right, y0):
         label, value = entry[1], entry[2]
         out.append(f'<text x="{x:.1f}" y="{y:.1f}" font-family="{MONO}" '
                    f'font-size="{INFO_FS}" fill="{LABEL}">{esc(label)}</text>')
-        out.append(f'<text x="{right:.1f}" y="{y:.1f}" text-anchor="end" '
+        value_id = ' id="profile-age"' if label == "age" else ""
+        out.append(f'<text{value_id} x="{right:.1f}" y="{y:.1f}" text-anchor="end" '
                    f'font-family="{MONO}" font-size="{INFO_FS}" fill="{VALUE}">{esc(value)}</text>')
         a = x + len(label) * INFO_CW + 10
         b = right - len(value) * INFO_CW - 10
